@@ -3,35 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스마트 안내</title>
+    <title>고객 맞춤형 사전 문진표</title>
     <style>
-        body { font-family: 'Apple SD Gothic Neo', sans-serif; text-align: center; background-color: #f4f6f8; margin: 0; padding: 20px; }
-        h1 { color: #333; font-size: 28px; margin-bottom: 10px; }
-        p { color: #555; font-size: 18px; margin-bottom: 30px; }
-        .btn-container { display: flex; flex-direction: column; gap: 15px; }
-        .btn { 
-            background-color: #0046FF; 
-            color: white; 
-            border: none; 
-            padding: 25px; 
-            font-size: 24px; 
-            font-weight: bold; 
-            border-radius: 15px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .btn:active { background-color: #0033cc; }
-    </style>
-</head>
-<body>
+        /* 맥북 및 모바일 맞춤 폰트와 스타일 */
+        body { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; background-color: #f0f4f8; margin: 0; padding: 20px; color: #333; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        h1 { font-size: 26px; color: #0046FF; text-align: center; margin-bottom: 30px; }
+        
+        .section { margin-bottom: 35px; text-align: left; }
+        label { font-size: 20px; font-weight: bold; display: block; margin-bottom: 15px; color: #444; }
 
-    <h1>어떤 업무를 도와드릴까요?</h1>
-    <p>원하시는 버튼을 가볍게 눌러주세요.</p>
+        /* 입력창 및 선택창 스타일 */
+        select, textarea { width: 100%; padding: 15px; font-size: 18px; border: 2px solid #ddd; border-radius: 12px; box-sizing: border-box; }
+        textarea { height: 100px; resize: none; }
 
-    <div class="btn-container">
-        <button class="btn" onclick="alert('창구 직원에게 예금/적금 니즈가 전달되었습니다. 7번 창구로 안내합니다.')">💰 예금 / 적금</button>
-        <button class="btn" onclick="alert('창구 직원에게 대출 상담 니즈가 전달되었습니다. 8번 창구로 안내합니다.')">🏠 대출 상담</button>
-        <button class="btn" onclick="alert('창구 직원에게 비밀번호 업무가 전달되었습니다. 9번 창구로 안내합니다.')">🔑 비밀번호 변경</button>
-    </div>
-
-</body>
-</html>
+        /* 커스텀 라디오 버튼 (타일 형태) */
+        .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .grid-item { position: relative; }
+        .grid-item input { position: absolute; opacity: 0; cursor: pointer; }
+        .grid-item label { 
+            display: block; padding: 15px; background: #fff; border: 2px solid #ddd; border-radius: 12px; 
+            text-align: center; font-size: 18px; cursor: pointer; transition: 0.2s; font-weight: normal;
